@@ -19,6 +19,10 @@ public class VerticalDivider extends Divider {
         super(context);
     }
 
+    public VerticalDivider(Context context, int res) {
+        super(context, res);
+    }
+
     public void setMargin(float marginTop, float marginBottom) {
         mMarginTop = dp2px(getContext(), marginTop);
         mMarginBottom = dp2px(getContext(), marginBottom);
