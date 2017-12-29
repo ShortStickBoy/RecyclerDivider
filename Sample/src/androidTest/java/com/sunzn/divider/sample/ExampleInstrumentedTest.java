@@ -1,4 +1,4 @@
-package com.sunzn.divider;
+package com.sunzn.divider.sample;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.sunzn.divider", appContext.getPackageName());
+        assertEquals("com.sunzn.divider.sample", appContext.getPackageName());
     }
 }

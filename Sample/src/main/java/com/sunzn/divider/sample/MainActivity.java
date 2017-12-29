@@ -1,4 +1,4 @@
-package com.sunzn.divider;
+package com.sunzn.divider.sample;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

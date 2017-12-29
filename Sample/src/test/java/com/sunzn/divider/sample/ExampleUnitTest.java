@@ -1,4 +1,4 @@
-package com.sunzn.divider;
+package com.sunzn.divider.sample;
 
 import org.junit.Test;
 
