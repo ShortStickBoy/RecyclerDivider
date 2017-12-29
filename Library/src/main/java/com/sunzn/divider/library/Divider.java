@@ -21,6 +21,11 @@ public abstract class Divider extends RecyclerView.ItemDecoration {
         mContext = context;
     }
 
+    public Divider(Context context, int res) {
+        mContext = context;
+        setDivider(res);
+    }
+
     public Context getContext() {
         return mContext;
     }
