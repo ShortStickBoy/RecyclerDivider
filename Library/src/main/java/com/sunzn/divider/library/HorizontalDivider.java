@@ -19,6 +19,10 @@ public class HorizontalDivider extends Divider {
         super(context);
     }
 
+    public HorizontalDivider(Context context, int res) {
+        super(context, res);
+    }
+
     public void setMargin(float marginStart, float marginEnd) {
         mMarginStart = dp2px(getContext(), marginStart);
         mMarginEnd = dp2px(getContext(), marginEnd);
