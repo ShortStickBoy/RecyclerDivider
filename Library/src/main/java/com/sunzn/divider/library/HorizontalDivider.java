@@ -14,6 +14,7 @@ public class HorizontalDivider extends Divider {
 
     private int mMarginStart;
     private int mMarginEnd;
+    private boolean mIncludeEdge = true;
 
     public HorizontalDivider(Context context) {
         super(context);
@@ -21,6 +22,16 @@ public class HorizontalDivider extends Divider {
 
     public HorizontalDivider(Context context, int res) {
         super(context, res);
+    }
+
+    public HorizontalDivider(Context context, int res, float marginStart, float marginEnd, boolean includeEdge) {
+        super(context, res);
+        setIncludeEdge(includeEdge);
+        setMargin(marginStart, marginEnd);
+    }
+
+    public void setIncludeEdge(boolean mIncludeEdge) {
+        this.mIncludeEdge = mIncludeEdge;
     }
 
     public void setMargin(float marginStart, float marginEnd) {
@@ -38,10 +49,9 @@ public class HorizontalDivider extends Divider {
         final int left = mMarginStart;
         final int right = parent.getWidth() - mMarginEnd;
 
-        final int childCount = parent.getChildCount();
+        final int childCount = parent.getChildCount() - (mIncludeEdge ? 0 : 1);
         for (int i = 0; i < childCount; i++) {
             final View child = parent.getChildAt(i);
-            android.support.v7.widget.RecyclerView v = new android.support.v7.widget.RecyclerView(parent.getContext());
             final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
             final int top = child.getBottom() + params.bottomMargin;
             final int bottom = top + getDivider().getIntrinsicHeight();
