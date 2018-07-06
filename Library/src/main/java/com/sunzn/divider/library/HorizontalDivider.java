@@ -24,6 +24,11 @@ public class HorizontalDivider extends Divider {
         super(context, res);
     }
 
+    public HorizontalDivider(Context context, int res, boolean includeEdge) {
+        super(context, res);
+        setIncludeEdge(includeEdge);
+    }
+
     public HorizontalDivider(Context context, int res, float marginStart, float marginEnd, boolean includeEdge) {
         super(context, res);
         setIncludeEdge(includeEdge);
