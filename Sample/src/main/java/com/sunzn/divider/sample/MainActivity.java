@@ -16,7 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView mRecyclerView = findViewById(R.id.rv);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.addItemDecoration(new HorizontalDivider(this, R.drawable.shape_item_line, 10, 10, false));
+        mRecyclerView.addItemDecoration(new HorizontalDivider(this, R.drawable.shape_item_line, false));
+//        mRecyclerView.addItemDecoration(new HorizontalDivider(this, R.drawable.shape_item_line, 10, 10, false));
         mRecyclerView.setAdapter(new RecyclerAdapter());
     }
 }
