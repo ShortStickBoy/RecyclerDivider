@@ -17,7 +17,7 @@ public class HorizontalDivider extends Divider {
     private int mDividerHeight;
     private boolean mIncludeEdge = true;
 
-    enum Sort {
+    public enum Sort {
         DP, PX
     }
 
