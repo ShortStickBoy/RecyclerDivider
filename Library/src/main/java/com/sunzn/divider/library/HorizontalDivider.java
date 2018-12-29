@@ -17,6 +17,10 @@ public class HorizontalDivider extends Divider {
     private int mDividerHeight;
     private boolean mIncludeEdge = true;
 
+    enum Sort {
+        DP, PX
+    }
+
     public HorizontalDivider(Context context) {
         super(context);
     }
@@ -32,8 +36,13 @@ public class HorizontalDivider extends Divider {
 
     public HorizontalDivider(Context context, int res, int height, boolean includeEdge) {
         super(context, res);
-        setHeight(height);
+        setHeight(Sort.DP, height);
         setIncludeEdge(includeEdge);
+    }
+
+    public HorizontalDivider(Context context, int res, Sort sort, int height, boolean includeEdge) {
+        super(context, res);
+        setHeight(sort, height);
     }
 
     public HorizontalDivider(Context context, int res, float marginStart, float marginEnd, boolean includeEdge) {
@@ -42,8 +51,15 @@ public class HorizontalDivider extends Divider {
         setMargin(marginStart, marginEnd);
     }
 
-    public void setHeight(int height) {
-        mDividerHeight = dp2px(getContext(), height);
+    private void setHeight(Sort sort, int height) {
+        switch (sort) {
+            case PX:
+                mDividerHeight = height;
+                break;
+            case DP:
+                mDividerHeight = dp2px(getContext(), height);
+                break;
+        }
     }
 
     public void setIncludeEdge(boolean includeEdge) {
